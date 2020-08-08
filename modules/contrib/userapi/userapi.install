@@ -1,0 +1,71 @@
+<?php
+/**
+ * Implements hook_schema().
+ *
+ */
+function userapi_schema() {
+  $schema['userapi'] = array(
+    'description' => 'Stores email, timestamp, nid and uid for an userapi',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for the record.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'first_name' => array(
+        'description' => 'The first name the user api.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => 0,
+      ),
+      'last_name' => array(
+        'description' => 'The last name the user api.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => 0,
+      ),
+      'email' => array(
+        'description' => 'email user.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'number_identification' => array(
+        'description' => 'The number identification user api.',
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'number_phone' => array(
+        'description' => 'The number phone user api.',
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => FALSE
+      ),
+      'date_born' => array(
+        'description' => 'The date born user api.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE
+      ),
+      'created' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Timestamp for when user api was created.',
+      ),
+    ),
+    'primary key' => array('id'),
+    'unique keys' => array(
+        'number_identification' => array(
+          'number_identification'
+        )
+    )
+  );
+  return $schema;
+}

@@ -1,0 +1,13 @@
+name: UserApi
+type: module
+description: Modulo that permmit create y finder user api.
+package: Web services
+dependencies:
+  - drupal:rest
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+# Information added by Drupal.org packaging script on 2020-08-06
+version: '8.x-1.18'
+project: 'userApi'
+datestamp: 1593229947
